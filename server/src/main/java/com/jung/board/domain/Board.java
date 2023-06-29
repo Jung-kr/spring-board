@@ -1,9 +1,6 @@
 package com.jung.board.domain;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -13,11 +10,12 @@ import lombok.ToString;
 @Entity
 @Data // @Getter @Setter 한번에
 @Table(name = "board")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)  // 생성자 관련
 @ToString(of = {"id, title"})
 public class Board {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
