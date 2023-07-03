@@ -19,11 +19,12 @@
 - Html/Css
 - JavaScript
 - React 18.2.0
+
+</details>   
+<br/> 
  
 ## 구조 및 설계  
-</details>   
-<br/>    
-
+   
 ### 1. DB  
 <img width="346" alt="image" src="https://github.com/Jung-kr/spring-board/assets/81340804/3a56f6e5-4d85-453c-9f89-82a9f71781f4">
    
