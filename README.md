@@ -1,5 +1,6 @@
 # Basic board project  
 > 최소한의 기능으로 작동하는 게시판 프로젝트입니다.  
+</details>   
 <br/> 
 ## 기술 스택 
 #### 1) 백엔드
