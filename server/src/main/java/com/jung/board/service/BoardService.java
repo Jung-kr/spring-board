@@ -1,6 +1,7 @@
 package com.jung.board.service;
 
 import com.jung.board.domain.Board;
+import com.jung.board.dto.BoardDto;
 import com.jung.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,12 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
+    @Transactional
     public Board findOne(Long boardId) {
+        // 조회수 카운트
+        Board board = boardRepository.findById(boardId).get();
+        board.setCountVisit(board.getCountVisit()+1L);
+
         return boardRepository.findById(boardId).orElseThrow(NullPointerException::new);
     }
 

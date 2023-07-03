@@ -31,6 +31,7 @@ public class BoardApiController {
     public ApiResult<BoardDto> boardDetail(@PathVariable("boardId") Long boardId){
         Board board = boardService.findOne(boardId);
         BoardDto boardDto = new BoardDto(board);
+
         return ApiResult.OK(boardDto);
     }
 
@@ -41,7 +42,9 @@ public class BoardApiController {
             Board board = new Board(
                     boardDto.getId(),
                     boardDto.getTitle(),
-                    boardDto.getContent()
+                    boardDto.getContent(),
+                    boardDto.getCountVisit(),
+                    boardDto.getWriter()
             );
             boardService.create(board);
             return ApiResult.OK(true);
